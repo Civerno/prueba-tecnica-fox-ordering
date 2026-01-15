@@ -67,7 +67,6 @@ Análisis integral de datos de ventas de comida para mascotas utilizando **SQL**
 - Filtrado por país, línea de producto y período
 - Agregación de datos de ventas
 
- - Ver: [`sql/consulta_ventas_colombia.sql`](sql/consulta_ventas_colombia.sql)
 
 ### **2. Python - Limpieza y Análisis**
 - Carga de múltiples formatos (Excel, JSON, Parquet)
@@ -75,15 +74,12 @@ Análisis integral de datos de ventas de comida para mascotas utilizando **SQL**
 - Análisis estadístico descriptivo
 - Generación de vista minable consolidada
 
- - Ver: [`python/analisis_datos.ipynb`](python/analisis_datos.ipynb)
 
 ### **3. Power BI - Visualización**
 - Dashboard interactivo con 6+ visualizaciones
 - 7 medidas DAX implementadas
 - Modelo de datos tipo Star Schema
 - Filtros dinámicos por año, zona y cluster
-
- - Ver: [Capturas del Dashboard](powerbi/capturas/)
 
 ---
 
@@ -118,9 +114,19 @@ Análisis integral de datos de ventas de comida para mascotas utilizando **SQL**
 5. **Segmentación por Edad** - Gráfico de dona
 6. **Filtros Interactivos** - Año, Zona, Cluster
 
-### **Capturas:**
+## Observaciones: 
 
-![Dashboard Completo](powerbi/capturas/dashboard_completo.png)
+Durante el análisis inicial, se identificó que los archivos contenían información duplicada:
+•	PD_Maestro_Clientes existe en formato Excel y Parquet
+•	PD_Maestro_Productos existe en formato Excel y JSON
+
+Se optó por utilizar:
+•	Parquet para Maestro_Clientes (mayor eficiencia)
+•	JSON para Maestro_Productos (formato estructurado estándar)
+•	Excel únicamente para PD_Ventas_Mes
+
+Esto optimizar y tener buenas practicas.
+
 
 ---
 
